@@ -1,5 +1,5 @@
 # Arcade-Game
-This game used the application of Object-Oriented JavaScript, HTML5 Canvas, and Responsive Design.    
+This game uses the application of Object-Oriented JavaScript, HTML5 Canvas, and Responsive Design.    
 
 ## How to play
 
