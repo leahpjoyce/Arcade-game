@@ -1,29 +1,37 @@
-
 class Enemy { // Use ES6 class syntax
     constructor(x,y,speed) {
     this.x = x;
     this.y = y;
     this.speed = speed;
     this.sprite = 'images/enemy-bug.png';
+    this.positionX = -400;
  }
 
+    update(dt) {
+        this.x += this.speed * dt;
 
-update(dt) {
-    this.x += this.speed * dt;
-    
-    this.x += 1;
-        if (this.x > 500) {
-        this.x = 0;
+        this.x += 1;
+            if (this.x > 500) {
+            this.x = 0;
+        }
+        
+        // if player collides with the bugs back to position Player(200, 400)
+        if(player.x < this.x + 80 &&
+          player.x + 80 > this.x &&
+          player.y < this.y + 60 &&
+          60 + player.y > this.y) {
+            player.x = 202;
+            player.y = 405;
+        }
     }
-}
 
-// Draw the enemy on the screen, required method for game
-render() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+    // Draw the enemy on the screen, required method for game
+    render() {
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+    
 
 } 
-
 
 class Player { // Use ES6 class syntax
      constructor(x,y) {
@@ -42,25 +50,28 @@ class Player { // Use ES6 class syntax
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
+
     
-    //moves the player using the arrow key
-    handleInput(dt) {
-        switch (dt) {
-        case 'up': 
-          this.y -= 83;
-          break;
-        case 'down':
-          this.y += 83;
-          break;
-        case 'right':
-          this.x += 101;
-          break;
-        case 'left':
-          this.x -= 101;
-          break;
-        default:
-          break;
-      }
+    handleInput(position) {
+        if (position == 'left' && this.x > 0) {
+             this.x -= 101;
+        }
+        
+       if (position == 'right' && this.x < 400) {
+            this.x += 101;
+        }
+       if (position == 'up' && this.y > 0) {
+            this.y -= 83;
+        }
+       if (position == 'down' && this.y < 400) {
+           this.y += 83;
+       }
+        if (this.y < 0) {
+            setTimeout(function () {
+                player.x = 200;
+                player.y = 400;
+            },300);
+        }
     }
 } 
 
@@ -83,7 +94,7 @@ var player = new Player(200, 400);
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
-    var allowedKeys = {
+    let allowedKeys = {
         37: 'left',
         38: 'up',
         39: 'right',
