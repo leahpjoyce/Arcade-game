@@ -4,9 +4,7 @@ class Enemy { // Use ES6 class syntax
     this.y = y;
     this.speed = speed;
     this.sprite = 'images/enemy-bug.png';
-    this.positionX = -400;
  }
-
     update(dt) {
         this.x += this.speed * dt;
 
@@ -29,12 +27,10 @@ class Enemy { // Use ES6 class syntax
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
-    
-
 } 
 
 class Player { // Use ES6 class syntax
-     constructor(x,y) {
+     constructor(x = 200, y = 400) {
         this.sprite = 'images/char-boy.png';
         this.x = x;
         this.y = y;
@@ -51,12 +47,10 @@ class Player { // Use ES6 class syntax
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 
-    
     handleInput(position) {
         if (position == 'left' && this.x > 0) {
              this.x -= 101;
         }
-        
        if (position == 'right' && this.x < 400) {
             this.x += 101;
         }
@@ -66,8 +60,8 @@ class Player { // Use ES6 class syntax
        if (position == 'down' && this.y < 400) {
            this.y += 83;
        }
-        if (this.y < 0) {
-            setTimeout(function () {
+        if (this.y < 0){
+            setTimeout(() => {
                 player.x = 200;
                 player.y = 400;
             },300);
@@ -79,16 +73,13 @@ class Player { // Use ES6 class syntax
 // Place all enemy objects in an array called allEnemies
 const bug1 = new Enemy(0, 55, 105);
 const bug2 = new Enemy(80, 200, 95);
-const bug3 = new Enemy(155, 155, 100); // 3rd grid
-const bug4 = new Enemy(100, 95, 80);
-const bug5 = new Enemy(0, 48, 80);
-const bug6 = new Enemy(100, 150, 100);
-const bug7 = new Enemy(0, 60, 50);
-const bug8 = new Enemy(0, 80, 155);
+const bug3 = new Enemy(155, 155, 100); 
+const bug4 = new Enemy(0, 48, 80);
+const bug5 = new Enemy(50,155, 50);
+const bug6 = new Enemy(100, 80, 20);
 
-let allEnemies = [bug1, bug2, bug3, bug4, bug5, bug6, bug7, bug8];
-var player = new Player(200, 400);
-
+const allEnemies = [bug1, bug2, bug3, bug4, bug5, bug6];
+const player = new Player();
 
 
 // This listens for key presses and sends the keys to your
