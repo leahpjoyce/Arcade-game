@@ -1,5 +1,5 @@
 # Arcade-Game
-This game uses the application of Object-Oriented JavaScript, HTML5 Canvas, and Responsive Design.    
+This game uses the application of Object-Oriented JavaScript, HTML5 Canvas, and Responsive Design.
 
 ## How to play
 
@@ -13,8 +13,22 @@ This game uses the application of Object-Oriented JavaScript, HTML5 Canvas, and 
    * The player moves back to the start square.
 6. If the player reaches the water the game is won.
 
-## Credits
+## Credits and Resources
 
+* [Classic Arcade Game Clone Repo](https://github.com/udacity/frontend-nanodegree-arcade-game)
+* [Slack Community Resources](https://www.diigo.com/outliner/fj3m65/Udacity-Classic-Arcade-Game-Project-(project-%233)?key=al7ek43dms)
+* [Object-oriented JavaScript for beginners](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS)
+* [ES6 In Depth Articles](https://hacks.mozilla.org/category/es6-in-depth/)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Canvas tutorial](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial)
+* [2D collision detection](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
+* [Object building practice](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_building_practice)
+* [Object-Oriented JavaScript](https://classroom.udacity.com/courses/ud711)
+* [HTML5 Canvas](https://www.udacity.com/course/html5-canvas--ud292)
+
+## Project Specification
+
+[Classic Arcade Game Clone Rubric](https://review.udacity.com/?_ga=1.242571394.1230547285.1451946706#!/rubrics/15/view)
 
 ## Found a bug?
 
