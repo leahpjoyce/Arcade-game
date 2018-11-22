@@ -31,7 +31,7 @@ class Enemy { // Use ES6 class syntax
 
 class Player { // Use ES6 class syntax
      constructor(x = 200, y = 400) {
-        this.sprite = 'images/char-boy.png';
+        this.sprite = 'images/char-princess-girl.png'; 
         this.x = x;
         this.y = y;
      }
